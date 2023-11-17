@@ -1,4 +1,4 @@
-# WiP Apple Silicon Slackware install helper
+# WiP Apple Silicon Slackware install helper Do Not Use Yet
 
 This repo makes it possible to bootstrap a vanilla Slackware environment on
 Apple Silicon hardware.
