@@ -1,6 +1,6 @@
-# Apple Silicon Gentoo install helper
+# WiP Apple Silicon Slackware install helper
 
-This repo makes it possible to bootstrap a vanilla Gentoo environment on
+This repo makes it possible to bootstrap a vanilla Slackware environment on
 Apple Silicon hardware.
 
 
