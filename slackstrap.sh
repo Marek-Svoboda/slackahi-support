@@ -16,15 +16,15 @@ cleanup() {
 if [[ $(whoami) != "root" ]]; then
     echo "This script must be run as root. Type your password"
     echo "when prompted."
-    sudo ./genstrap.sh
+    sudo ./slackstrap.sh
     exit 0
 
 fi
 
-echo "This script will bootstrap an initramfs for installing Gentoo on"
+echo "This script will bootstrap an initramfs for installing Slackware on"
 echo "Apple Silicon machines. It must be run from an Asahi Linux install."
 echo
-echo "Please ensure that the latest Gentoo arm64 minimal install"
+echo "Please ensure that the latest Slackware arm64 minimal install"
 echo "image is located in this directory and named install.iso before"
 echo "continuing."
 echo
@@ -49,11 +49,11 @@ parted -sf /dev/ram0 "mkpart root 0 -1"
 mkfs.ext4 /dev/ram0p1
 mount /dev/ram0p1 /mnt/temp
 
-echo "Unsquashing Gentoo live environment."
+echo "Unsquashing Slackware live environment."
 echo
 unsquashfs -q image.squashfs
 
-echo "Setting up Gentoo live environment for Apple Silicon..."
+echo "Setting up Slackware live environment for Apple Silicon..."
 echo
 cd squashfs-root
 rm -rf lib/firmware/*
@@ -118,5 +118,5 @@ cat resources/init_grub >> /boot/grub/grub.cfg
 cleanup
 modprobe -r brd
 
-echo "When rebooting your system, select Gentoo Live Install environment from"
-echo "the GRUB menu to boot into the Gentoo LiveCD."
+echo "When rebooting your system, select Slackware Live Install environment from"
+echo "the GRUB menu to boot into the Slackware LiveCD."
