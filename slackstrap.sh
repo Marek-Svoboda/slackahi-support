@@ -57,7 +57,6 @@ echo "Setting up Slackware live environment for Apple Silicon..."
 echo
 cd squashfs-root
 rm -rf lib/firmware/*
-rm -rf lib/modules/*gentoo*
 cp -r /lib/modules/$(uname -r) lib/modules/
 
 depmod -a --basedir=. $(uname -r)
@@ -112,7 +111,7 @@ dracut --force \
 
 echo "Setting up initramfs and GRUB..."
 
-mv bootstrap_image.img /boot/initramfs-gentoo-live.img
+mv bootstrap_image.img /boot/initramfs-slackware-live.img
 cat resources/init_grub >> /boot/grub/grub.cfg
 
 cleanup
